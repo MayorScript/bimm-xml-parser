@@ -20,7 +20,7 @@ const transformXml = async (req: Request, res: Response) => {
         res.json(result);
     }catch(err: any){
         logger.error(`An error occured ${err.message}`);
-        res.json({
+        res.status(400).json({
             message: "An error occured",
             error: err.message
         });
