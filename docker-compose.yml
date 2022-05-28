@@ -14,9 +14,9 @@ services:
     container_name: bimm_xml_container
     command: mongod --auth
     environment:
-      - MONGO_INITDB_DATABASE=${}
-      - MONGO_INITDB_ROOT_USERNAME=${}
-      - MONGO_INITDB_ROOT_PASSWORD=${}
+      - MONGO_INITDB_DATABASE=${MONGO_DATABASE}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
     volumes:
       - ./home/mongodb:/home/mongodb
       - mongodbdata:/data/db

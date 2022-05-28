@@ -17,6 +17,7 @@ module.exports = {
         ]
     },
     xml: {
+        baseUrl: process.env.VEHICLE_BASE_URL_XML,
         vehicleType: process.env.VEHICLE_TYPE_XML,
         vehicleMake: process.env.VEHICLE_MAKE_XML
     }
