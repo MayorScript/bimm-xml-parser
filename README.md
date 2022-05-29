@@ -4,7 +4,7 @@ This is a test application for bimm client to demonstrate the following:
 - Transform xml data to json
 - Store json data to database (MongoDB)
 - Scalabe application structure
-- test driven development
+- Test driven development
 
 ## Prerequisites:
 Make sure your environment has the following installed:
