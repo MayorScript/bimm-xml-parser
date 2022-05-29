@@ -3,8 +3,8 @@
 This is a test application for bimm client to demonstrate the following:
 - Transform xml data to json
 - Store json data to database (MongoDB)
-- [Unit Testing](docs/unit-tests-nodejs.md)
-- [SonarQube Integration](docs/sonarqube-integration-js.md)
+- Scalabe application structure
+- test driven development
 
 ## Prerequisites:
 Make sure your environment has the following installed:
@@ -21,20 +21,6 @@ To clone this repo onto your local machine:
 
 You may have to enter your Github credentials to execute this command. Confirm that the repo exists in your current
 directory by entering the `dir` (for Windows) or `ls` (for Linux) command into your terminal.
-
-#### **GCP Cloud SDK Integration + Activation**
-From the Google Cloud CLI Shell/terminal, run the following command to initialize Google Cloud SDK:
-
-    gcloud init --no-launch-browser
-
-Follow the prompts to authenticate and connect to your GCP Project.
-
-#### **GCP Application Authentication**
-If you want your local application to temporarily use your own user credentials for API access, run:
-
-    gcloud auth application-default login --no-launch-browser
-
-See [Local Application Authentication](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login) for more detail instruction.
 ___
 
 ## **Try the application**
