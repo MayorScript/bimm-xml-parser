@@ -3,4 +3,4 @@ import { createLogger } from 'winston';
 import config from '../config';
 const logger = createLogger(config.logging);
 
-module.exports = logger;
+export default logger;

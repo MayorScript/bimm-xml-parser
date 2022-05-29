@@ -1,9 +1,8 @@
-import express,{Application, Request, Response} from "express";
+import express, {Application, Request, Response} from "express";
 import cors from "cors";
 require("dotenv").config();
 
-const config = require("./config");
-const logger = require("./utils/logger");
+import config from "./config";
 
 const app: Application = express();
 

@@ -1,10 +1,13 @@
 import app from "./server";
-const config = require("./config");
-const logger = require("./utils/logger");
+import connect from "./utils/db";
+import config from "./config";
+import logger from "./utils/logger";
 
 const PORT: number = config.port;
 
 // initialize server
-app.listen(PORT,() => {
+app.listen(PORT, async () => {
+    // connect database
+    await connect();
     logger.info(`Application running at port http://localhost:${PORT}`);
 });

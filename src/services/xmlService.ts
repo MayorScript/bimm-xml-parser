@@ -1,23 +1,20 @@
 import { Request, Response } from "express";
 import axios from "../utils/axiosInstance";
-import { parseString, parseStringPromise } from "xml2js"; 
+import { parseStringPromise } from "xml2js"; 
+import { VehicleTypes } from "../types/vehicle.types";
 
-const config = require("../config");
-const logger = require("../utils/logger");
+// import model to save data
+import {XmlData} from "../models/xmlDataModel";
+
+import config from "../config";
+import logger from "../utils/logger";
 
 const vehicleType = config.xml.vehicleType;
 
-interface VehicleTypes {
-  typeId: any;
-  typeName: any;
-}
 class XmlService {
   /**
-   * 
-   * @param req 
-   * @param res 
-   * @param makeId 
-   * @returns 
+   * @param makeId
+   * @returns
    */
   async transform(
     makeId: number,
@@ -31,7 +28,7 @@ class XmlService {
     const results = await parseStringPromise(xmlVehicleData, {
       mergeAttrs: true,
     });
-
+    const makeID = results.Response.SearchCriteria[0];
     // initialize array for vehiclce types
     let vehicleTypesArr: VehicleTypes[] = [];
     // check if make id exists
@@ -47,9 +44,16 @@ class XmlService {
       },
     );
 
+    // insert into database
+    await XmlData.findOneAndUpdate(
+      { makeId: makeID },
+      { $set: { vehicleTypes: vehicleTypesArr } },
+      { upsert: true, new: true },
+    );
+
     // new objects to be returned
     const newObject = {
-      makeId: results.Response.SearchCriteria[0],
+      makeId: makeID,
       makeName: "[value]",
       vehicleTypes: vehicleTypesArr,
     };

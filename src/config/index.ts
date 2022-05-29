@@ -5,4 +5,4 @@ const config = require(`./${env}`);
 
 config.env = env;
 
-module.exports = Object.freeze({ ...config });
+export default Object.freeze({ ...config });
