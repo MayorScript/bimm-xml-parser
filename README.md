@@ -37,6 +37,7 @@ NODE_ENV=production
 Do not add secrets directly into `.env`; any secret values should be managed by a Secret Manager.
 
 To start the database, run the commands:
+Make sure to run `source .env` in the root folder before starting the container:
 ```
 docker-compose up -d
 ```
@@ -68,3 +69,4 @@ Please note that you need to pass in the `makeId` request body, For example:
     makeId: 440
 }
 ```
+### Note: The data saved in the database can be found in "test" (Using Mongo Compass)

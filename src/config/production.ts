@@ -18,7 +18,7 @@ module.exports = {
     vehicleType: process.env.VEHICLE_TYPE_XML,
   },
   db: {
-    dbUrl: `mongodb://${process.env.MONGO_NON_ROOT_USERNAME}:${process.env.MONGO_NON_ROOT_PASSWORD}@localhost:27017`,
+    dbUrl: `mongodb://${process.env.MONGO_ROOT_USERNAME}:${process.env.MONGO_ROOT_PASSWORD}@localhost:27017`,
     dbOptions: {
       useNewUrlParser: true,
       useCreateIndex: true,
