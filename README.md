@@ -1,6 +1,6 @@
 # bimm-xml-parser
 
-This is a test application for bimm client to demonstrate the following:
+This is an internal poc library for bimm client to demonstrate the following:
 - Transform xml data to json
 - Store json data to database (MongoDB)
 - Scalabe application structure
